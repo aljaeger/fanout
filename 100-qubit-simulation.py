@@ -46,7 +46,7 @@ def make_sparse(quantum_object):
 
 #Experimental Params 
 max_sideband = 2*np.pi*120*0.4
-gate_duration = 0.1
+gate_duration = np.pi
 
 from scipy.optimize import minimize
 

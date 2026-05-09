@@ -1,3 +1,5 @@
+import os
+
 # Multithreading Options
 os.environ["OMP_NUM_THREADS"] = "1"
 os.environ["OPENBLAS_NUM_THREADS"] = "1"
@@ -5,7 +7,6 @@ os.environ["MKL_NUM_THREADS"] = "1"
 os.environ["VECLIB_MAXIMUM_THREADS"] = "1"
 os.environ["NUMEXPR_NUM_THREADS"] = "1"
 
-import os
 import progressbar
 import numpy as np
 import scipy as sp
@@ -27,11 +28,18 @@ matplotlib.rcParams['font.serif'] = ['Computer Modern']
 font = {'weight' : 'normal', 'size'   : 20}
 plt.rc('font', **font)
 
+# Set omega_t to match timing condition
+gate_duration = np.pi
 
+max_sideband = 20
+omega_t = 1
+
+print(f"data/qubitscalingsimulation_smallH{int(gate_duration*1000)}.p")
 with open(f"data/qubitscalingsimulation_smallH{int(gate_duration*1000)}.p", "rb") as file:
     gate_duration, ns_extended, untimed_fidelities, n_fidelities = pickle.load(file)
 
 print(len(ns_extended), len(untimed_fidelities))
+
 plt.figure(figsize=(8,6))
 
 # Calculate the mean and standard deviation
@@ -64,4 +72,27 @@ plt.xticks([2] + list(range(10, 101, 10)))
 
 plt.legend()
 plt.tight_layout()
-plt.savefig("100qubitsimulation.pdf")
+plt.savefig("figures/100qubitsimulation.pdf")
+
+plt.figure(figsize=(8,6))
+
+# Calculate the mean and standard deviation
+plot_ns = plot_ns[:30]
+n_fidelities = n_fidelities[:30]
+y1 = y1[:30]
+y2 = y2[:30]
+
+plt.scatter(plot_ns, n_fidelities, color="green", label="Timed Fidelity")
+# Inner darker region (±std)
+plt.fill_between(plot_ns, 1-y1, 1-y2, color="blue", alpha=0.2, label="Untimed Fidelity")
+plt.plot(plot_ns, np.array((plot_ns-1)*(omega_t / (max_sideband))**2), label="Theoretical Upper Bound", color="red")
+plt.xticks(np.arange(int(plot_ns.min()), int(plot_ns.max())+1, 4))  # Adjust the step size as needed
+plt.xlabel("Number of Qubits")
+plt.ylabel("Gate Error")
+plt.grid()
+plt.xticks(list(range(2, 31, 4)))
+
+plt.legend()
+plt.tight_layout()
+plt.savefig("figures/30qubitsimulation.pdf")
+
