@@ -1,4 +1,4 @@
-# Fanout Gate
+# Quantum Fanout Gates in Constant Depth via Resonance Engineering
 This repository hosts the code relating to a novel method for implementing the fanout gate, published on Arxiv/###.
 
 ## Figures
