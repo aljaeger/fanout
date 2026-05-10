@@ -2,17 +2,17 @@
 This repository hosts the code relating to a novel method for implementing the fanout gate, published on Arxiv/###.
 ## Figures
 ### Fig. 5: Off-Resonant Excitations
-<p align="center"><img src="figures/off-resonant-excitations.png" width="600"></p>
+<p align="center"><img src="figures/off-resonant-excitations.png" width="300"></p>
 
 Produced by `off-resonant-excitations.py`, results in figure `figures/off-resonant-excitations.pdf`.
 Demonstrates the effect of off-resonant excitations in the idle subspace on the fidelity.
 ### Fig. 6: Basis state evolution
-<p align="center"><img src="figures/basis-state-evolution.png" width="600"></p>
+<p align="center"><img src="figures/basis-state-evolution.png" width="300"></p>
 
 Produced by `basis_evolution.py`, results in `figures/basis-state-evolution.pdf`.
 Demonstrates the gate mechanism by showing the gate evolution for computational basis states.
 ### Fig. 7: Truth table
-<p align="center"><img src="figures/fanout-truthtable.png" width="600"></p>
+<p align="center"><img src="figures/fanout-truthtable.png" width="300"></p>
 
 Produced by `truthtable.py` and results in `figures/fanout-truthtable.pdf`.
 Produces a plot mapping input state to output state populations, with color denoting the phase. This is effectively the truth table of the fanout gate, with the magnitude and phase encoded in the height and color of the bar plot.
@@ -26,7 +26,7 @@ Demonstrates the theoretical and simulated fidelity scaling as a function of the
 ### Fig. 10: Fidelity by basis vector, plotted against ratio between Omega_t and Omega_c
 
 | ![](figures/basis-state-fidelity-3.png) | ![](figures/basis-state-fidelity-10.png) |
-|:---:|:---:|:---:|
+|:---:|:---:|
 
 Produced by `basis-state-fidelity-vs-ratio.py`, results in `figures/basis-state-fidelity-{n}.pdf` for n=1,...,10.
 Demonstrates how the fidelity scales by basis vector, and how the corresponding average fidelity scales.
@@ -45,7 +45,7 @@ Demonstrates linear error scaling and verification of the theory.
 
 Produced by `Dicke-simulations_validitycheck_heating.py`, and produces `test_{n}.pdf` and `test_heating_scatterplot.pdf`, which represent basis evolution and random state evolutions respectively. This verifies the block-diagonal approximation.
 ### Fig. 14: Fidelity under heating operators
-<p align="center"><img src="figures/heating_plot.png" width="600"></p>
+<p align="center"><img src="figures/heating_plot.png" width="300"></p>
 
 Data produced by `Dicke_simulations_heating_grid.py`, producing data in `data/heating_grid_data.npz`.
 Plot produced by `plot_heating.py`, which imports data and produces `figures/heating_plot.png`.
