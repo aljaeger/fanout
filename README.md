@@ -31,7 +31,7 @@ Produced by `fidelity-plot.py` and results in `fidelity-vs-ratio.pdf` and `fidel
 Demonstrates the theoretical and simulated fidelity scaling as a function of the ratio between Omega_c and Omega_t.
 ### Fig. 10: Fidelity by basis vector, plotted against ratio between Omega_t and Omega_c
 
-| ![](figures/basis-state-fidelity-1.png) | ![](figures/basis-state-fidelity-2.png) | ![](figures/basis-state-fidelity-3.png) |
+| ![](figures/basis-state-fidelity-3.png) | ![](figures/basis-state-fidelity-10.png) | ![](figures/basis-state-fidelity-3.png) |
 |:---:|:---:|:---:|
 
 Produced by `basis-state-fidelity-vs-ratio.py`, results in `figures/basis-state-fidelity-{n}.pdf` for n=1,...,10.
