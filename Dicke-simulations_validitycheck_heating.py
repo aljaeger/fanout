@@ -26,7 +26,6 @@ matplotlib.rcParams['font.serif'] = ['Computer Modern']
 # Matplotlib Plot Formatting
 font = {'weight' : 'normal', 'size'   : 18}
 plt.rc('font', **font)
-options = Options(num_cpus=5)
 
 from useful_functions import get_process_fidelity, sparsify, StateSpace, montecarlo_process_fidelity, basisstate_process_fidelity
 from scipy.sparse import csr_matrix, issparse  
@@ -163,7 +162,7 @@ for control_state in [0, 1]:
 
         basis_vec = basis(dims, [1-control_state, 0, 0])
 
-        states = mesolve(hamiltonian, basis_vec, np.linspace(0, gate_duration, 200, ), c_ops=c_ops).states
+        states = mesolve(hamiltonian, basis_vec, np.linspace(0, gate_duration, 200), c_ops=c_ops).states
 
         fids = [(basis_vec*basis_vec.dag() *state).tr() for state in states]
 
