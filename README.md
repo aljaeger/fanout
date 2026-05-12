@@ -7,9 +7,9 @@ This repository hosts the code relating to a novel method for implementing the f
 Produced by `off-resonant-excitations.py`, results in figure `figures/off-resonant-excitations.pdf`.
 Demonstrates the effect of off-resonant excitations in the idle subspace on the fidelity.
 ### Fig. 6: Basis state evolution
-<p align="center"><img src="figures/basis-state-evolution.png" width="300"></p>
+<p align="center"><img src="figures/basis_state_evolution.png" width="300"></p>
 
-Produced by `basis_evolution.py`, results in `figures/basis-state-evolution.pdf`.
+Produced by `basis_evolution.py`, results in `figures/basis_state_evolution.pdf`.
 Demonstrates the gate mechanism by showing the gate evolution for computational basis states.
 ### Fig. 7: Truth table
 <p align="center"><img src="figures/fanout-truthtable.png" width="300"></p>
